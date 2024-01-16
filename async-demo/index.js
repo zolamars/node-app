@@ -9,17 +9,17 @@ console.log("Before");
 
 // Async and Await
 async function displayCommits() {
-  try{
+  try {
     const user = await getUser(1);
     const repos = await getRepos(user.gitHubUserName);
-    const commits = await getCommits(repos[0])
-    console.log(commits)
-  }catch(err){
-    console.log('Error', err.message)
+    const commits = await getCommits(repos[0]);
+    console.log(commits);
+  } catch (err) {
+    console.log("Error", err.message);
   }
 }
 
-displayCommits()
+displayCommits();
 console.log("After");
 
 function getUser(id) {
